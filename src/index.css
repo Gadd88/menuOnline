@@ -57,12 +57,19 @@ figure{
 .home{
   width: 100%;
   min-height: 525px;
-  padding: 10px;
+  padding: 20px 80px 20px 80px;
   font-size: 25px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+@media screen and (max-width:700px){
+  .home{
+    padding: 20px 15px 20px 15px;
+  }
+}
+  
+
 .home-imgs{
   display: flex;
   gap: 10px;
@@ -71,7 +78,7 @@ figure{
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   min-height: 350px;
-  max-height: 500px;
+  max-height: 400px;
 }
 .home-imgs::-webkit-scrollbar{
   display: none;
@@ -84,7 +91,7 @@ figure{
   height: 100%;
 }
 .img-promo{
-  object-fit: fill;
+  object-fit: cover;
   height: 100%;
 }
 /* FOOTER */
