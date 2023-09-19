@@ -22,7 +22,7 @@
   padding: 20px;
   gap: 10px;
 }
-figure{
+header figure{
   width: 300px;
 }
 .logo-carmona{
@@ -73,8 +73,6 @@ figure{
     padding: 20px 15px 20px 15px;
   }
 }
-  
-
 .home-imgs{
   display: flex;
   gap: 10px;
@@ -123,6 +121,7 @@ figure{
   height: 45px;
 }
 .social-insta{
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
+  border: 2px solid #000;
 }
