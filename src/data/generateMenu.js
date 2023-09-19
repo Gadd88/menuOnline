@@ -1,11 +1,13 @@
-const u = (e) => {
+const obtenerMenuPorVersion = (e) => {
     let { version: d } = e, t = "";
-    return d == 1 && (t = m(e)), d == 2 && (t = p(e)), d == 3 && (t = x(e)), d == 4 && (t = h(e)), t;
-  }, c = (e) => {
+    return d == 1 && (t = menuVer1(e)), d == 2 && (t = menuVer2(e)), d == 3 && (t = menuVer3(e)), d == 4 && (t = menuVer4(e)), t;
+  }; 
+const obtenerAlergias = (e) => {
     let d = window.__OneFoodMenu__.allergens, t = "";
     return (e == null ? void 0 : e.length) == 0 || !e ? "" : (t += e.map((l) => `<div data-prod-allergen class="cursor-pointer flex-shrink-0 text-xs p-1 bg-slate-100 rounded-full border w-6 h-6 grid place-content-center">${d.find((o) => o.uid == l).name}</div>`).join(""), t);
-  }, g = (e) => e.map((d) => ` <div data-prod-tag class="flex text-xs flex-shrink-0 px-2 py-1 rounded-full bg-green-600 bg-opacity-10 text-green-600">${d}</div>`).join("");
-  let f = (e, d = !1) => {
+  };
+const obtenerTags = (e) => e.map((d) => ` <div data-prod-tag class="flex text-xs flex-shrink-0 px-2 py-1 rounded-full bg-green-600 bg-opacity-10 text-green-600">${d}</div>`).join("");
+  let obtenerOpciones = (e, d = !1) => {
     let t = window.__OneFoodMenu__.configs.priceSymbol, l = window.__OneFoodMenu__.configs.version, o = "";
     return e.map((n, i) => (o = "", (l == 1 || l == 2) && i >= 1 && !d || (o += `<div class="flex justify-between items-center border-t first:border-t-0 border-dashed border-gray-300 
               ${(l == 1 || l == 2) && !d ? "py-0" : "py-2"}">
@@ -18,48 +20,48 @@ const u = (e) => {
                                       ${t} ${n.price}
                                   </div>`, (l == 1 || l == 2) && !d && e[1] && (o += '<span class="arrow-down rounded bg-slate-200"></span>'), o += "</div>", o += "</div>"), o)).join("");
   };
-  const m = ({ products: e, categories: d }) => d.map((t) => {
+  const menuVer1 = ({ products: e, categories: d }) => d.map((t) => {
     let l = "", o = "";
     return o = e[t.uid].map((n) => {
       let i = "";
       return i += `   <div class="1fm-product flex cursor-pointer rounded-xl bg-white flex-shrink-0 shadow h-44" data-product-block="${n.uid}" >`, i += `   <div class=" h-full w-40 image-bg image-bg-2 shrink-0 rounded-l-xl">
                                           <div class="image-bg h-full w-full rounded-l-xl" style="background-image: url(${n.imageUrl})"> </div>
-                                      </div>`, i += '<div class="p-2.5 md:p-4 flex flex-col flex-grow overflow-hidden">', i += `<div class="font-bold mb-2">${n.name}</div>`, i += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full pb-2">', i += c(n.allergens), n.tags && (i += g(n.tags)), i += "</div>", i += `<div class="mt-auto opacity-60 leading-tight line-clamp-2 w-full hidden text-base">${n.description}</div>`, i += '<div class="pt-4">', n.options && (i += f(n.options)), i += "</div>", i += `   </div>
+                                      </div>`, i += '<div class="p-2.5 md:p-4 flex flex-col flex-grow overflow-hidden">', i += `<div class="font-bold mb-2">${n.name}</div>`, i += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full pb-2">', i += obtenerAlergias(n.allergens), n.tags && (i += obtenerTags(n.tags)), i += "</div>", i += `<div class="mt-auto opacity-60 leading-tight line-clamp-2 w-full hidden text-base">${n.description}</div>`, i += '<div class="pt-4">', n.options && (i += obtenerOpciones(n.options)), i += "</div>", i += `   </div>
                           </div>`, i;
     }).join(""), l += `<div class="1fm-category my-6" data-category>
                           <h2 class="1fm-category-title text-2xl font-bold">${t.name}</h2> 
                           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2"> ${o} </div>
                       </div>`, l;
-  }).join(""), p = ({ products: e, categories: d, priceSymbol: t }) => d.map((l) => {
+  }).join(""), menuVer2 = ({ products: e, categories: d, priceSymbol: t }) => d.map((l) => {
     let o = "", n = "";
     return n = e[l.uid].map((i) => {
       var a, r;
       let s = "";
       return s += `<div class="1fm-product snap-center flex flex-col cursor-pointer rounded-xl bg-white flex-shrink-0 shadow w-72" data-product-block="${i.uid}" >`, s += `<div class="h-52 w-full image-bg image-bg-2 shrink-0 rounded-t-xl">
                                       <div class="image-bg h-full w-full rounded-t-xl" style="background-image: url(${i.imageUrl})"> </div>
-                                  </div>`, s += '<div class="p-4 flex flex-col flex-grow">', s += `<div class="font-bold pb-2">${i.name}</div>`, (((a = i.allergens) == null ? void 0 : a.length) > 0 || ((r = i.tags) == null ? void 0 : r.length) > 0) && (s += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full my-2">', s += c(i.allergens), i.tags && (s += g(i.tags)), s += "</div>"), s += `<div class="opacity-60 leading-tight line-clamp-2 w-full mt-auto">${i.description}</div>`, s += '<div class="pt-4">', i.options && (s += f(i.options)), s += "</div>", s += `   </div>
+                                  </div>`, s += '<div class="p-4 flex flex-col flex-grow">', s += `<div class="font-bold pb-2">${i.name}</div>`, (((a = i.allergens) == null ? void 0 : a.length) > 0 || ((r = i.tags) == null ? void 0 : r.length) > 0) && (s += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full my-2">', s += obtenerAlergias(i.allergens), i.tags && (s += obtenerTags(i.tags)), s += "</div>"), s += `<div class="opacity-60 leading-tight line-clamp-2 w-full mt-auto">${i.description}</div>`, s += '<div class="pt-4">', i.options && (s += obtenerOpciones(i.options)), s += "</div>", s += `   </div>
                           </div>`, s;
     }).join(""), o += `<div class="1fm-category my-6 overflow-hidden relative" data-category>
                           <h2 class="1fm-category-title text-2xl font-bold">${l.name}</h2>
                           <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory py-6 px-1">${n}</div>
                       </div>`, o;
-  }).join(""), x = ({ products: e, categories: d }) => d.map((t) => {
+  }).join(""), menuVer3 = ({ products: e, categories: d }) => d.map((t) => {
     let l = "", o = "";
     return o = e[t.uid].map((n) => {
       var s, a;
       let i = "";
-      return i += '<div class="1fm-product bg-white rounded-md shadow p-4 md:p-6 flex flex-shrink-0 relative">', i += '<div class="w-full flex flex-col">', i += `<div class="font-bold mb-auto pb-2 text-2xl line-clamp-2">${n.name}</div>`, (((s = n.tags) == null ? void 0 : s.length) || ((a = n.allergens) == null ? void 0 : a.length)) && (i += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full py-2">', i += c(n.allergens), i += g(n.tags), i += "</div>"), i += `<div class="opacity-50 leading-tight w-full mb-2 text-lg">${n.description}</div>`, i += "<div>", n.options && (i += f(n.options)), i += "</div>", i += `</div>
+      return i += '<div class="1fm-product bg-white rounded-md shadow p-4 md:p-6 flex flex-shrink-0 relative">', i += '<div class="w-full flex flex-col">', i += `<div class="font-bold mb-auto pb-2 text-2xl line-clamp-2">${n.name}</div>`, (((s = n.tags) == null ? void 0 : s.length) || ((a = n.allergens) == null ? void 0 : a.length)) && (i += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full py-2">', i += obtenerAlergias(n.allergens), i += obtenerTags(n.tags), i += "</div>"), i += `<div class="opacity-50 leading-tight w-full mb-2 text-lg">${n.description}</div>`, i += "<div>", n.options && (i += obtenerOpciones(n.options)), i += "</div>", i += `</div>
                           </div>`, i;
     }).join(""), l += `<div class="1fm-category my-8 first:mt-0 py-5 bg-s rounded-md" data-category>
                           <h2 class="text-center text-2xl md:text-3xl mb-6 font-semibold uppercase p-4 w-full truncate">${t.name}</h2> 
                           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"> ${o} </div>
                       </div>`, l;
-  }).join(""), h = ({ products: e, categories: d }) => `<div class="bg-white p-4 shadow rounded-md">${d.map((l) => {
+  }).join(""), menuVer4 = ({ products: e, categories: d }) => `<div class="bg-white p-4 shadow rounded-md">${d.map((l) => {
     let o = "", n = "";
     return n = e[l.uid].map((i) => {
       var a, r;
       let s = "";
-      return s += '<div class="1fm-product flex flex-shrink-0 p-2 md:p-4">', s += '<div class="w-full flex flex-col">', s += `<div class="font-bold mb-2 text-2xl line-clamp-2">${i.name}</div>`, (((a = i.tags) == null ? void 0 : a.length) || ((r = i.allergens) == null ? void 0 : r.length)) && (s += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full py-4">', s += c(i.allergens), s += g(i.tags), s += "</div>"), s += `<div class="opacity-50 italic leading-tight w-full mb-2 text-lg">${i.description}</div>`, s += "<div>", i.options && (s += f(i.options)), s += "</div>", s += `</div>
+      return s += '<div class="1fm-product flex flex-shrink-0 p-2 md:p-4">', s += '<div class="w-full flex flex-col">', s += `<div class="font-bold mb-2 text-2xl line-clamp-2">${i.name}</div>`, (((a = i.tags) == null ? void 0 : a.length) || ((r = i.allergens) == null ? void 0 : r.length)) && (s += '<div class="flex gap-2 overflow-x-auto overflow-hidden max-w-full py-4">', s += obtenerAlergias(i.allergens), s += obtenerTags(i.tags), s += "</div>"), s += `<div class="opacity-50 italic leading-tight w-full mb-2 text-lg">${i.description}</div>`, s += "<div>", i.options && (s += obtenerOpciones(i.options)), s += "</div>", s += `</div>
                           </div>`, s;
     }).join(""), o += `
                       <div class="1fm-category my-20 first:mt-10 max-w-[768px] mx-auto" data-category>
@@ -82,7 +84,7 @@ const u = (e) => {
               <div class="image-bg h-full w-full rounded-t-xl" style="background-image: url(${t.imageUrl})"></div>
           </div>`)()}
                   <div class="p-4 flex flex-col flex-grow">
-                      <div class="font-bold my-2">${t.name}</div>`, l += '<div class="flex gap-2 flex-wrap overflow-hidden max-w-full pb-2">', l += c(t.allergens), t.tags && (l += g(t.tags)), l += "</div>", l += ` <div class="opacity-60 text leading-tight my-2">${t.description}</div>`, l += "<div>", t.options && (l += f(t.options, !0)), l += "</div>", l += "</div>", l += "</div>", l;
+                      <div class="font-bold my-2">${t.name}</div>`, l += '<div class="flex gap-2 flex-wrap overflow-hidden max-w-full pb-2">', l += obtenerAlergias(t.allergens), t.tags && (l += obtenerTags(t.tags)), l += "</div>", l += ` <div class="opacity-60 text leading-tight my-2">${t.description}</div>`, l += "<div>", t.options && (l += obtenerOpciones(t.options, !0)), l += "</div>", l += "</div>", l += "</div>", l;
   }, y = (e) => ` <div class="modal fixed z-20 flex items-end justify-center top-0 left-0 w-full h-screen p-2 md:p-4 fade-in">
           <div class="modal-backdrop fixed h-full w-full min-h-screen top-0 left-0 bg-black bg-opacity-30" data-close-modal></div>
           <div class="modal-container bg-white rounded-xl z-10 m-auto w-full flex flex-col flex-1 max-h-full relative overflow-hidden max-w-[375px]">
@@ -177,7 +179,7 @@ const u = (e) => {
       }
     }, T(t);
     let o = "", { groupedProducts: n, filteredCategories: i } = L(e);
-    o = u({
+    o = obtenerMenuPorVersion({
       categories: i,
       products: n,
       version: l.version,
@@ -198,3 +200,17 @@ const u = (e) => {
   export {
     H as createMenu
   };
+
+
+// u -> obtenerMenuPorVersion**
+// c -> obtenerAlergenos**
+// g -> obtenerEtiquetas**
+// f -> obtenerOpciones**
+// m -> menuVer1**
+// p -> menuVer2**
+// x -> menuVer3**
+// h -> menuVer4**
+// w -> abrirModalProducto
+// b -> obtenerPrimerProducto
+// y -> generarModalProducto
+// _ -> iniciarMenu
