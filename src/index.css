@@ -1,0 +1,116 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  ;
+  letter-spacing: 1.5pt;
+  font-weight: bold;
+}
+*::-webkit-scrollbar{
+  display: none;
+}
+/* HEADER */
+.header{
+  background-color: #000;
+  color:#fff;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+figure{
+  width: 50px;
+}
+/* TITLE */
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-icono{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 5px solid #1f3251;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+}
+.btn-icono:active{
+  background-color: #1f3251;
+}
+.btn-icono:active img{
+  filter: invert(100%);
+  /* filter: sepia() saturate(10000%) hue-rotate(10deg); */
+}
+.btn-icono img{
+  width: 30px;
+  height: 30px;
+}
+/* HOME */
+.home{
+  width: 100%;
+  min-height: 525px;
+  padding: 10px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.home-imgs{
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  scroll-snap-align: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  min-height: 350px;
+  max-height: 500px;
+}
+.home-imgs::-webkit-scrollbar{
+  display: none;
+}
+.home-img-container{
+  border: 3px solid #1f3251;
+  border-radius: 20px;
+  width: 300px;
+  overflow: hidden;
+  height: 100%;
+}
+.img-promo{
+  object-fit: fill;
+  height: 100%;
+}
+/* FOOTER */
+.footer{
+  background-color: #000;
+  color: #fff;
+}
+.footer-sociales{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+.footer-sociales figure a{
+  width: 50px;
+  height: 50px;
+}
+.footer-sociales figure a img{
+  object-fit: contain;
+}
+.social-wsp{
+  width: 45px;
+  height: 45px;
+}
+.social-insta{
+  width: 60px;
+  height: 60px;
+}
