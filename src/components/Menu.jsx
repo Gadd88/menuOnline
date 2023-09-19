@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { createMenu } from '../data/generateMenu'
 import Home from './Home';
+import Proptypes from 'prop-types'
 
 const Menu = ({menu}) => {
 
@@ -24,6 +25,10 @@ const Menu = ({menu}) => {
             }
         </>
     )
+}
+
+Menu.propTypes = {
+    menu: Proptypes.array
 }
 
 export default Menu

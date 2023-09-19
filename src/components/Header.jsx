@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <div className="header">
       <figure>
-        <img src={logo} alt="Carmona Delivery" />
+        <img src={logo} alt="Carmona Delivery" className='logo-carmona'/>
       </figure>
-      <h1>Carmona Delivery</h1>
+      {/* <h1>Carmona Delivery</h1> */}
     </div>
   )
 }

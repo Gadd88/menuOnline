@@ -3,7 +3,7 @@ import { promosImgs } from '../data/promos'
 const Home = () => {
   return (
     <section className='home'>
-        <h1>Novedades</h1>
+        <h1>Septiembre</h1>
         <section className='home-imgs'>
             {
                 promosImgs.map((img,index) =>(
