@@ -8,7 +8,6 @@ import Title from "./components/Title"
 function App() {
 
   const [menu, setMenu] = useState(null)
-  
 
   return (
     <>

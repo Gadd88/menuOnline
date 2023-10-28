@@ -33,5 +33,3 @@ const useFetchPapaParse = (url) => {
 
 
 export default useFetchPapaParse
-
-// 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQbXadVqT_G86UsEjC-VJlARId1tgbnXmsQacHDktL5f1N8XdCY5UzmvEL2UINL22uthIvvGXF0TC_s/pub?gid=0&single=true&output=csv'

@@ -12,6 +12,8 @@ const Menu = ({menuData}) => {
 
     const [pizzas] = useFetchPapaParse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbXadVqT_G86UsEjC-VJlARId1tgbnXmsQacHDktL5f1N8XdCY5UzmvEL2UINL22uthIvvGXF0TC_s/pub?gid=1646481994&single=true&output=csv')
     
+    const [bebidas] = useFetchPapaParse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbXadVqT_G86UsEjC-VJlARId1tgbnXmsQacHDktL5f1N8XdCY5UzmvEL2UINL22uthIvvGXF0TC_s/pub?gid=1013302729&single=true&output=csv')
+
     // const [menu] = useCreateMenu(menuData)    
 
     return (
@@ -24,11 +26,14 @@ const Menu = ({menuData}) => {
                 </div>
             } */}
             <div id='OneFoodMenu' className='container'>
-                <div id='OneFootMenuItems'>
+                <div id='OneFoodMenuItems'>
                     <ListaProductos productos={hamburguesas}/>
                 </div>
-                <div id='OneFootMenuItems'>
+                <div id='OneFoodMenuItems'>
                     <ListaProductos productos={pizzas}/>
+                </div>
+                <div id="OneFoodMenuItems">
+                    <ListaProductos productos={bebidas}/>
                 </div>
             </div>
         </>
