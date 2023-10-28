@@ -1,22 +1,21 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Menu from "./components/Menu"
 import Title from "./components/Title"
+import { MenuContext, MenuContextProvider } from "./context/MenuContext"
 
 
 function App() {
 
-  const [menu, setMenu] = useState(null)
 
   return (
-    <>
+    <MenuContextProvider>
       <Header/>
-      {/* <Title setMenu={setMenu}/> */}
-      <Menu
-        menuData={menu}/>
+      <Title/>
+      <Menu/>
       <Footer/>
-    </>
+    </MenuContextProvider>
   )
 }
 

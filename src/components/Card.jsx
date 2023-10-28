@@ -1,8 +1,7 @@
 
 const Card = ({producto}) => {
-
-    const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION, CATEGORIA_ID} = producto
-
+    
+    const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION, CATEGORIA_ID, UUID} = producto
     const img = `${URL_IMG}`
 
     return (

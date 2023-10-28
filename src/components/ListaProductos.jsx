@@ -1,6 +1,15 @@
+import { useContext } from "react"
 import Card from "./Card"
+import Modal from "./Modal"
+import { MenuContext } from "../context/MenuContext"
 
 const ListaProductos = ({productos}) => {
+
+    const {modal, setModal, setModalData, modalData} = useContext(MenuContext)
+    const handleClick = (producto) => {
+        setModal(true)
+        setModalData(producto)
+    }
   return (
     <>
         {
@@ -11,12 +20,19 @@ const ListaProductos = ({productos}) => {
                             {
                                 productos.map( (producto) => (
                                     <div key={producto.UUID}
+                                        onClick={() => handleClick(producto)}
                                         className="1fm-product snap-center flex flex-col cursor-pointer  bg-black flex-shrink-0 shadow w-72 rounded-2xl">
                                         <Card
-                                            producto={producto}/>
+                                            producto={producto}
+                                            />
                                     </div>
                                 ))
                             }    
+                            {
+                                modal
+                                ? <Modal producto={modalData}/>
+                                : null
+                            }
                         </div>
                     </div>)
                 : null

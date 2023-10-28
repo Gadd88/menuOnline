@@ -4,38 +4,43 @@ import Proptypes from 'prop-types'
 import ListaProductos from './ListaProductos';
 import useFetchPapaParse from '../hooks/useFetchPapaParse';
 import useCreateMenu from '../hooks/useCreateMenu';
+import { MenuContext } from '../context/MenuContext';
+import { useContext } from 'react';
 
 
-const Menu = ({menuData}) => {
 
-    const [hamburguesas] =  useFetchPapaParse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbXadVqT_G86UsEjC-VJlARId1tgbnXmsQacHDktL5f1N8XdCY5UzmvEL2UINL22uthIvvGXF0TC_s/pub?gid=0&single=true&output=csv')
+const Menu = () => {
 
-    const [pizzas] = useFetchPapaParse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbXadVqT_G86UsEjC-VJlARId1tgbnXmsQacHDktL5f1N8XdCY5UzmvEL2UINL22uthIvvGXF0TC_s/pub?gid=1646481994&single=true&output=csv')
+    const {hamburguesas, pizzas, bebidas, menuData, showMenu} = useContext(MenuContext)
     
-    const [bebidas] = useFetchPapaParse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbXadVqT_G86UsEjC-VJlARId1tgbnXmsQacHDktL5f1N8XdCY5UzmvEL2UINL22uthIvvGXF0TC_s/pub?gid=1013302729&single=true&output=csv')
-
-    // const [menu] = useCreateMenu(menuData)    
+    //  const [menu] = useCreateMenu(menuData)    
 
     return (
         <>
             {/* {
                 menu !== null
                 ? <div id="OneFoodMenu" className="container"></div>
-                : <div id='OneFoodMenu' className='container'>
+                : (<div id='OneFoodMenu' className='container'>
                     <ListaProductos productos={productos}/>
-                </div>
+                    </div>)
             } */}
-            <div id='OneFoodMenu' className='container'>
-                <div id='OneFoodMenuItems'>
-                    <ListaProductos productos={hamburguesas}/>
-                </div>
-                <div id='OneFoodMenuItems'>
-                    <ListaProductos productos={pizzas}/>
-                </div>
-                <div id="OneFoodMenuItems">
-                    <ListaProductos productos={bebidas}/>
-                </div>
-            </div>
+            {
+                showMenu
+                ? (
+                    <div id='OneFoodMenu' className='container'>
+                        <div id='OneFoodMenuItems'>
+                            <ListaProductos productos={hamburguesas}/>
+                        </div>
+                        <div id='OneFoodMenuItems'>
+                            <ListaProductos productos={pizzas}/>
+                        </div>
+                        <div id="OneFoodMenuItems">
+                            <ListaProductos productos={bebidas}/>
+                        </div>
+                    </div>
+                )
+                : <Home/>
+            }
         </>
     )
 }

@@ -65,7 +65,7 @@ header figure{
 /* HOME */
 .home{
   width: 100%;
-  min-height: 525px;
+  min-height: 62vh;
   padding: 20px 80px 20px 80px;
   font-size: 25px;
   display: flex;

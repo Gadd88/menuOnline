@@ -3,18 +3,23 @@ import pizza from '../assets/icons/pizzaIcon.svg'
 import home from '../assets/icons/homeIcon.svg'
 import { menuBurguers } from '../data/menuBurguers'
 import { menuPizzas } from '../data/menuPizzas'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { MenuContext } from '../context/MenuContext'
 
-const Title = ({setMenu}) => {
+const Title = () => {
+
+    const {setMenu, setShowMenu} = useContext(MenuContext)
     
     const selectBurguer = () =>{
-        setMenu(menuBurguers);
+        // setMenu(menuBurguers);
+        setShowMenu(true)
     }
-    const selectPizza = () =>{
-        setMenu(menuPizzas)
-    }
+    // const selectPizza = () =>{
+    //     setMenu(menuPizzas)
+    // }
     const selectHome= () =>{
-        setMenu(null)
+        // setMenu(null)
+        setShowMenu(false)
     }
     
     return (
@@ -25,9 +30,9 @@ const Title = ({setMenu}) => {
             <figure className='btn-icono' onClick={selectBurguer}>
                 <img src={hamburguesa} alt="hamburguesa icono" />
             </figure>
-            <figure className='btn-icono' onClick={selectPizza}>
+            {/* <figure className='btn-icono' onClick={selectPizza}>
                 <img src={pizza} alt="pizza icono" />
-            </figure>
+            </figure> */}
         </div>
     )
 }
