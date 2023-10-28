@@ -3,11 +3,12 @@ import pizza from '../assets/icons/pizzaIcon.svg'
 import home from '../assets/icons/homeIcon.svg'
 import { menuBurguers } from '../data/menuBurguers'
 import { menuPizzas } from '../data/menuPizzas'
+import { useState } from 'react';
 
 const Title = ({setMenu}) => {
-
+    
     const selectBurguer = () =>{
-        setMenu(menuBurguers)
+        setMenu(menuBurguers);
     }
     const selectPizza = () =>{
         setMenu(menuPizzas)

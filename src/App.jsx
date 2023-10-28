@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       <Header/>
-      <Title setMenu={setMenu}/>
+      {/* <Title setMenu={setMenu}/> */}
       <Menu
-        menu={menu}/>
+        menuData={menu}/>
       <Footer/>
     </>
   )
