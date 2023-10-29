@@ -16,13 +16,13 @@ const Header = () => {
       </figure>
       {/* <h1>Carmona Delivery</h1> */}
       <section className="selectorMenu">
-        <label htmlFor="menuversion">Visualizacion de menú</label>
+        <label htmlFor="menuversion">Visualizacion</label>
         <select 
           name="menuversion"
           id="menuversion"
           onChange={handleVersion}>
-          <option value="1">Version 1</option>
-          <option value="2">Version 2</option>
+          <option value="1">Tarjetas</option>
+          <option value="2">Columna</option>
         </select>
       </section>
     </header>
