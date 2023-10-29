@@ -6,6 +6,8 @@ export const MenuContext = createContext(null)
 
 export const MenuContextProvider = ({children}) => {
 
+    const [menuVersion, setMenuVersion] = useState(1)
+
     const [showMenu, setShowMenu] = useState(false)
     
     const [modalData, setModalData] = useState(null)
@@ -32,7 +34,9 @@ export const MenuContextProvider = ({children}) => {
                 modalData,
                 setModalData,
                 showMenu,
-                setShowMenu
+                setShowMenu,
+                menuVersion,
+                setMenuVersion
                 }}>
             {children}
 

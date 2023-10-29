@@ -5,7 +5,7 @@ const Card = ({producto}) => {
     const img = `${URL_IMG}`
 
     return (
-    <div>
+    <div className="1fm-product snap-center flex flex-col cursor-pointer  bg-black flex-shrink-0 shadow w-72 rounded-2xl">
         <figure className="h-52 w-full image-bg image-bg-2 shrink-0 rounded-t-xl">
             <img src={`${URL_IMG}`} alt={`${PRODUCTO}`} className="image-bg h-full w-full rounded-t-xl"/>
         </figure>

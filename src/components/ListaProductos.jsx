@@ -2,29 +2,34 @@ import { useContext } from "react"
 import Card from "./Card"
 import Modal from "./Modal"
 import { MenuContext } from "../context/MenuContext"
+import CardVers2 from "./CardVers2"
 
 const ListaProductos = ({productos}) => {
 
-    const {modal, setModal, setModalData, modalData} = useContext(MenuContext)
+    const {modal, setModal, setModalData, modalData, menuVersion} = useContext(MenuContext)
     const handleClick = (producto) => {
         setModal(true)
         setModalData(producto)
     }
-  return (
+
+    let cardver1 = 'flex gap-4 overflow-x-auto snap-x snap-mandatory py-6 px-1'
+    let cardver2 = 'grid grid-cols-1 md:grid-cols-2 gap-6 pt-2'
+    console.log(menuVersion)
+    return (
     <>
         {
             productos && productos.length > 0
                 ?    (<div className="1fm-category my-6 overflow-hidden relative">
                         <h2 className="text-2xl font-bold">{productos[0].CATEGORIA}</h2>
-                        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory py-6 px-1">
+                        <div className={`${menuVersion == 1 ? cardver1 : cardver2}`}>
                             {
                                 productos.map( (producto) => (
                                     <div key={producto.UUID}
                                         onClick={() => handleClick(producto)}
-                                        className="1fm-product snap-center flex flex-col cursor-pointer  bg-black flex-shrink-0 shadow w-72 rounded-2xl">
-                                        <Card
-                                            producto={producto}
-                                            />
+                                        >
+                                            {
+                                                menuVersion == 1 ? <Card producto={producto}/> : <CardVers2 producto={producto}/>
+                                            }
                                     </div>
                                 ))
                             }    
