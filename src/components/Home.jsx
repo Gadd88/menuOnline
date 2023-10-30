@@ -1,9 +1,11 @@
 import { promosImgs } from '../data/promos'
 
 const Home = () => {
+    const date = new Date();
+    const month = date.toLocaleString('default', { month: 'long' });
   return (
     <section className='home'>
-        <h1>Septiembre</h1>
+        <h1>{month.toUpperCase()}</h1>
         <section className='home-imgs'>
             {
                 promosImgs.map((img,index) =>(
