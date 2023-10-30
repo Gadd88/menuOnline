@@ -11,7 +11,7 @@ import { useContext } from 'react';
 
 const Menu = () => {
 
-    const {hamburguesas, pizzas, bebidas, menuData, showMenu} = useContext(MenuContext)
+    const {hamburguesas, pizzas, bebidas, showMenu} = useContext(MenuContext)
     
     //  const [menu] = useCreateMenu(menuData)    
 

@@ -3,6 +3,7 @@ import { MenuContext } from "../context/MenuContext"
 
 const Modal = ({producto}) => {
 
+    const {PRODUCTO, DESCRIPCION, PRECIO, URL_IMG} = producto
     const { setModal } = useContext(MenuContext)
     
     return (
@@ -17,19 +18,19 @@ const Modal = ({producto}) => {
                     </div>
                     <div className="modal-content overflow-y-auto h-full flex-1">
                         <div className="overflow-y-hidden">
-                            <div className="flex flex-col bg-white flex-shrink-0 rounded-t-xl">
-                                <div className="h-80 w-full image-bg image-bg-2 shrink-0 border-b border-opacity-50">
-                                    <img src={producto.URL_IMG} alt={producto.PRODUCTO} className="image-bg h-full w-full rounded-t-xl"/>
+                            <div className="flex flex-col bg-gray-300 text-black flex-shrink-0 rounded-t-xl">
+                                <div className="h-80 w-full image-bg image-bg-2 shrink-0 border-b border-opacity-20">
+                                    <img src={URL_IMG} alt={PRODUCTO} className="image-bg h-full w-full rounded-t-xl"/>
                                 </div>
                                 <div className="p-4 flex flex-col flex-grow">
-                                    <div className="font-bold my-2">{producto.PRODUCTO}</div>
+                                    <div className="font-bold my-2">{PRODUCTO.toUpperCase()}</div>
                                     <div className="flex gap-2 flex-wrap overflow-hidden max-w-full pb-2"></div> 
-                                    <div className="opacity-60 text leading-tight my-2">{producto.DESCRIPCION}</div>
+                                    <div className="opacity-90 text leading-tight my-2">{DESCRIPCION}</div>
                                     <div>
                                         <div className="flex justify-between items-center border-t first:border-t-0 border-dashed border-gray-300 py-2">
-                                            <div className="text-gray-500 text-sm"></div>
+                                            <div className="text-gray-950 text-sm"></div>
                                             <div className="flex gap-2 items-center">
-                                                <div className="text-gray-700 font-medium text-lg">{producto.PRECIO}</div>
+                                                <div className="font-bold text-lg">{PRECIO}</div>
                                             </div>
                                         </div>
                                     </div>

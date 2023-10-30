@@ -183,7 +183,7 @@ const menuVer1 = ({ products: e, categories: d }) =>
             .join("")),
           (l += `<div class="1fm-category my-8 first:mt-0 py-5 bg-s rounded-md" data-category>
                           <h2 class="text-center text-2xl md:text-3xl mb-6 font-semibold uppercase p-4 w-full truncate">${t.name}</h2> 
-                          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"> ${o} </div>
+                          <div class="  "> ${o} </div>
                       </div>`),
           l
         );

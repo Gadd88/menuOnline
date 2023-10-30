@@ -22,7 +22,8 @@ const Header = () => {
           id="menuversion"
           onChange={handleVersion}>
           <option value="1">Tarjetas</option>
-          <option value="2">Columna</option>
+          <option value="2">Columnas</option>
+          <option value="3">Listas</option>
         </select>
       </section>
     </header>
