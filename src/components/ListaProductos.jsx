@@ -27,7 +27,7 @@ const ListaProductos = ({productos}) => {
                         <div className={`${menuVersion == 2 ? cardver2 : menuVersion == 3 ? cardver3 : cardver1}`}>
                             {
                                 productos.map( (producto) => (
-                                    <div key={producto.UUID}
+                                    <div key={window.crypto.randomUUID().slice(0,4)}
                                         onClick={() => handleClick(producto)}
                                         >
                                             {

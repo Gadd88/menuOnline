@@ -38,7 +38,7 @@ const ModalCarrito = ({pedido}) => {
                 <div className="modal-content overflow-y-auto h-full flex-1">
                     <div className="overflow-y-hidden">
                         <div className="flex flex-col bg-gray-300 text-black flex-shrink-0 rounded-t-xl p-2">
-                            <table className='table-auto border-spacing-y-2 border-separate'>
+                            <table className='table-auto border-spacing-y-2 border-separate p-2'>
                                 <thead>
                                     <tr>
                                         <th>Cant.</th>

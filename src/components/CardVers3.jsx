@@ -1,12 +1,15 @@
-
+import { useContext } from "react"
+import { MenuContext } from "../context/MenuContext"
 
 const CardVers3 = ({producto}) => {
     const {PRODUCTO, PRECIO, DESCRIPCION} = producto
+    const {agregarPedido} = useContext(MenuContext)
 
   return (
-    <div className="1fm-product flex flex-shrink-0 p-2 md:p-4 border-b-2 border-gray-400">
+    <div className="1fm-product flex flex-shrink-0 p-2 md:p-4 border-b-2 border-gray-400 relative">
+        <button className="absolute top-2 right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8" onClick={()=>agregarPedido(producto)}>+</button>
         <div className="w-full flex flex-col">
-            <h2 className="font-bold mb-2 text-2xl line-clamp-2">{PRODUCTO}</h2>
+            <h2 className="font-bold mb-2 text-xl line-clamp-2">{PRODUCTO}</h2>
             <div className="flex gap-2 overflow-x-auto overflow-hidden max-w-full py-2">
                 <div className="opacity-80 italic leading-tight w-full mb-2 text-lg">{DESCRIPCION}</div>
                 <div className="pt-2">
