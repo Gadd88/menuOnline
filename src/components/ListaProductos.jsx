@@ -7,16 +7,17 @@ import CardVers3 from "./CardVers3"
 
 const ListaProductos = ({productos}) => {
 
-    const {modal, setModal, setModalData, modalData, menuVersion} = useContext(MenuContext)
+    const {modal, setModal, setModalData, modalData, menuVersion, pedido} = useContext(MenuContext)
 
     const handleClick = (producto) => {
-        setModal(true)
+        // setModal(true)
         setModalData(producto)
     }
 
     let cardver1 = 'flex gap-4 overflow-x-auto snap-x snap-mandatory py-6 px-1'
     let cardver2 = 'grid grid-cols-1 md:grid-cols-2 gap-6 py-6'
     let cardver3 = 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 py-6'
+    
     return (
     <>
         {
@@ -30,8 +31,13 @@ const ListaProductos = ({productos}) => {
                                         onClick={() => handleClick(producto)}
                                         >
                                             {
-                                                menuVersion == 1 ? <CardVers1 producto={producto}/> : menuVersion == 2 ? <CardVers2 producto={producto}/> : <CardVers3 producto={producto}/> 
+                                                menuVersion == 1 
+                                                ? <CardVers1 producto={producto}/> 
+                                                : menuVersion == 2 
+                                                    ? <CardVers2 producto={producto}/> 
+                                                    : <CardVers3 producto={producto}/> 
                                             }
+
                                     </div>
                                 ))
                             }    

@@ -1,0 +1,102 @@
+import React, { useState } from 'react'
+import { useContext } from "react"
+import { MenuContext } from "../context/MenuContext"
+import borrar from '../assets/icons/delete.svg'
+import wsp from '../assets/icons/wsp.svg'
+
+
+const ModalCarrito = ({pedido}) => {
+
+    const { setShowCarrito, borrarProducto } = useContext(MenuContext)
+    let total = 0;
+
+    const totalFunc = (pedido) =>{
+        for (let i = 0; i < pedido.length; i++) {
+            total = total + (Number(pedido[i].PRECIO.replace(/[^0-9.-]+/g,"")) * pedido[i].CANTIDAD);
+        }
+    }
+    totalFunc(pedido);
+
+    let pedidoStr = ''
+    const convertirPedido = (pedido) =>{
+        for (let i=0; i < pedido.length; i++){
+            pedidoStr = pedido[i].CANTIDAD + 'x ' + pedido[i].PRODUCTO + ',%0A' + pedidoStr;
+        }
+    }
+    convertirPedido(pedido)    
+
+  return (
+    <div id="OneFoodMenuModal"> 
+        <div className="modal fixed z-20 flex items-end justify-center top-0 left-0 w-full h-screen p-2 md:p-4 fade-in">
+            <div className="modal-backdrop fixed h-full w-full min-h-screen top-0 left-0 bg-black bg-opacity-30" data-close-modal></div>
+            <div className="modal-container bg-white rounded-xl z-10 m-auto w-full flex flex-col flex-1 max-h-full relative max-w-[375px] min-h-[200px]">
+                <div className="modal-close cursor-pointer bg-white text-black absolute text-opacity-80 transition-all p-2 rounded-full -right-2 -top-4" onClick={() => setShowCarrito(false)} data-close-modal>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </div>
+                <div className="modal-content overflow-y-auto h-full flex-1">
+                    <div className="overflow-y-hidden">
+                        <div className="flex flex-col bg-gray-300 text-black flex-shrink-0 rounded-t-xl p-2">
+                            <table className='table-auto border-spacing-y-2 border-separate'>
+                                <thead>
+                                    <tr>
+                                        <th>Cant.</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    { 
+                                        pedido.length > 0
+                                            ? (pedido.map(item => (
+                                                <tr 
+                                                    className="item border-b-2" 
+                                                    key={window.crypto.randomUUID().slice(0,4)}
+                                                    >
+                                                    <td>{item.CANTIDAD}</td>
+                                                    <td className='font-light'>{item.PRODUCTO}</td>
+                                                    <td className='font-semibold'>{item.PRECIO}</td>        
+                                                    <td><img src={borrar} alt="borrar" className='cursor-pointer' onClick={()=>borrarProducto(item.PRODUCTO)}/></td>
+                                                </tr>
+                                                )))
+                                            : (<tr className='text-center'>
+                                                <td colSpan='4'>No hay productos seleccionados</td>
+                                                </tr>)
+                                    }            
+                                </tbody>
+                            </table>
+                            {/* <ul>
+                                {
+                                    pedido.length > 0
+                                    ? (pedido.map(item => (
+                                        <li 
+                                            className="item border-b-2" 
+                                            key={window.crypto.randomUUID().slice(0,4)}
+                                            >
+                                            <h3
+                                                className='flex items-center gap-4'
+                                                >
+                                                    {item.PRODUCTO}
+                                                    <img src={borrar} alt="borrar" className='cursor-pointer' onClick={()=>borrarProducto(item.PRODUCTO)}/></h3>
+                                            <span className='font-semibold'>{item.PRECIO}</span>
+                                        </li>
+                                        )))
+                                    : <p className='text-center font-bold'>Lista de pedidos vacia</p>
+                                }
+                            </ul> */}
+                        </div>
+                    </div>
+                </div>
+                <p className='p-2 text-center font-bold'>Total: ${total}</p>
+                <button className='btn p-2 bg-black text-white active:bg-slate-600'><a href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>Enviar pedido <img src={wsp} alt="whatsapp" /></a></button>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default ModalCarrito
+
+// console.log(`https://api.whatsapp.com/send?phone=+3704632110&text=Hola%20me%20gustaria%20pedirte%20lo%20siguiente:%20${pedido}`)
