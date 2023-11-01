@@ -2,17 +2,15 @@ import { useContext, useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Menu from "./components/Menu"
-import Title from "./components/Title"
-import { MenuContext, MenuContextProvider } from "./context/MenuContext"
-
+import NavButtons from "./components/NavButtons"
+import { MenuContextProvider } from "./context/MenuProvider"
 
 function App() {
-
 
   return (
     <MenuContextProvider>
       <Header/>
-      <Title/>
+      <NavButtons/>
       <Menu/>
       <Footer/>
     </MenuContextProvider>

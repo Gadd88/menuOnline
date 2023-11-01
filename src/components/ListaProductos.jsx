@@ -13,30 +13,6 @@ const ListaProductos = ({productos}) => {
         setModal(true)
         setModalData(producto)
     }
-    let switchStyle;
-    switch(menuVersion){
-        case 2:
-            switchStyle = 'grid grid-cols-1 md:grid-cols-2 gap-6 pt-2'
-            break
-        case 3:
-            switchStyle = 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'
-            break
-        default:
-            switchStyle = 'flex gap-4 overflow-x-auto snap-x snap-mandatory py-6 px-1'
-    }
-
-    let componente;
-    switch(menuVersion){
-        case 2:
-            componente = <CardVers2 />
-            break
-        case 3:
-            componente = <CardVers3 />
-            break
-        default:
-            componente = <CardVers1 />
-            break
-    }
 
     let cardver1 = 'flex gap-4 overflow-x-auto snap-x snap-mandatory py-6 px-1'
     let cardver2 = 'grid grid-cols-1 md:grid-cols-2 gap-6 py-6'

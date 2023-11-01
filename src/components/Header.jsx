@@ -14,7 +14,7 @@ const Header = () => {
       <figure>
         <img src={logo} alt="Carmona Delivery" className='logo-carmona'/>
       </figure>
-      {/* <h1>Carmona Delivery</h1> */}
+
       <section className="selectorMenu">
         <label htmlFor="menuversion">Visualizacion</label>
         <select 

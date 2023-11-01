@@ -1,5 +1,5 @@
-import insta from '../assets/icons/instagram.svg'
-import wsp from '../assets/icons/whatsapp.svg'
+import insta from '../assets/icons/insta.svg'
+import wsp from '../assets/icons/wsp.svg'
 
 const Footer = () => {
   return (
