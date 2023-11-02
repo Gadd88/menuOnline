@@ -20,7 +20,7 @@ const NavButtons = () => {
         setShowCarrito(true)
     }
     let notificacion = '';
-    if(pedido.length>0) notificacion = 'before:content-[""] before:absolute before:-top-2 before:-right-2 before:bg-red-700 before:rounded-full before:w-4 before:h-4'
+    if(pedido.length>0) notificacion = `before:content-['*'] before:text-white before:flex before:pt-2 before:items-center before:justify-center before:absolute before:-top-2 before:-right-2 before:bg-red-700 before:rounded-full before:w-4 before:h-4`
     
     return (
         <div className='nav-botones'>
