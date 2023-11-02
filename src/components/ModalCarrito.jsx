@@ -58,7 +58,7 @@ const ModalCarrito = ({pedido}) => {
                                                     <td className='text-center font-bold'>{item.CANTIDAD}</td>
                                                     <td className=''>{item.PRODUCTO}</td>
                                                     <td className='font-semibold'>{item.PRECIO}</td>        
-                                                    <td><img src={borrar} alt="borrar" className='cursor-pointer ps-1' onClick={()=>borrarProducto(item.PRODUCTO)}/></td>
+                                                    <td><img src={borrar} alt="borrar" className='cursor-pointer ps-1 min-w-[20px]' onClick={()=>borrarProducto(item.PRODUCTO)}/></td>
                                                 </tr>
                                                 )))
                                             : (<tr className='text-center'>
