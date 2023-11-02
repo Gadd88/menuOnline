@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useContext } from "react"
 import { MenuContext } from "../context/MenuContext"
 import borrar from '../assets/icons/delete.svg'
@@ -28,7 +27,7 @@ const ModalCarrito = ({pedido}) => {
 
   return (
     <div id="OneFoodMenuModal"> 
-        <div className="modal fixed z-20 flex items-end justify-center top-0 left-0 w-full h-screen p-2 md:p-4 fade-in">
+        <div className="modal fixed z-20 flex items-end justify-center top-0 left-0 w-[98%] h-screen p-2 md:p-4 fade-in ms-1">
             <div className="modal-backdrop fixed h-full w-full min-h-screen top-0 left-0 bg-black bg-opacity-30" data-close-modal></div>
             <div className="modal-container bg-white rounded-xl z-10 m-auto w-full flex flex-col flex-1 max-h-[400px] relative max-w-[375px] min-h-[200px] ">
                 <div className="modal-close cursor-pointer bg-white text-black absolute text-opacity-80 transition-all p-2 rounded-full -right-2 -top-4" onClick={() => setShowCarrito(false)} data-close-modal>
@@ -42,9 +41,9 @@ const ModalCarrito = ({pedido}) => {
                             <table className='table-auto border-spacing-y-2 border-separate p-2'>
                                 <thead>
                                     <tr>
-                                        <th className='font-bold border-r-2 border-slate-600'>Cant.</th>
-                                        <th className='font-bold border-r-2 border-slate-600'>Producto</th>
-                                        <th className='font-bold'>Precio</th>
+                                        <th className='text-sm font-bold border-r-2 border-slate-600'>Cant.</th>
+                                        <th className='text-sm font-bold border-r-2 border-slate-600'>Producto</th>
+                                        <th className='text-sm font-bold'>Precio</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -68,25 +67,6 @@ const ModalCarrito = ({pedido}) => {
                                     }            
                                 </tbody>
                             </table>
-                            {/* <ul>
-                                {
-                                    pedido.length > 0
-                                    ? (pedido.map(item => (
-                                        <li 
-                                            className="item border-b-2" 
-                                            key={window.crypto.randomUUID().slice(0,4)}
-                                            >
-                                            <h3
-                                                className='flex items-center gap-4'
-                                                >
-                                                    {item.PRODUCTO}
-                                                    <img src={borrar} alt="borrar" className='cursor-pointer' onClick={()=>borrarProducto(item.PRODUCTO)}/></h3>
-                                            <span className='font-semibold'>{item.PRECIO}</span>
-                                        </li>
-                                        )))
-                                    : <p className='text-center font-bold'>Lista de pedidos vacia</p>
-                                }
-                            </ul> */}
                         </div>
                     </div>
                 </div>
@@ -102,5 +82,3 @@ const ModalCarrito = ({pedido}) => {
 }
 
 export default ModalCarrito
-
-// console.log(`https://api.whatsapp.com/send?phone=+3704632110&text=Hola%20me%20gustaria%20pedirte%20lo%20siguiente:%20${pedido}`)

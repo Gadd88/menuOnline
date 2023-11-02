@@ -13,7 +13,7 @@ const CardVers1 = ({producto}) => {
         <figure className="h-52 w-full image-bg image-bg-2 shrink-0 rounded-t-xl" onClick={() => handleClick(producto)}>
             <img src={`${URL_IMG}`} alt={`${PRODUCTO}`} className="image-bg h-full w-full rounded-t-xl"/>
         </figure>
-        <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8" onClick={()=>agregarPedido(producto)}>+</button>
+        <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400" onClick={()=>agregarPedido(producto)}>+</button>
         <div className="p-4 flex flex-col flex-grow text-white h-48 justify-start gap-0 bg-gray-800 rounded-b-2xl">
             <h2 className="font-bold">{PRODUCTO.toUpperCase()}</h2>
             <div className="flex flex-col items-end justify-between h-full">

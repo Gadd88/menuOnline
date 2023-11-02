@@ -8,9 +8,9 @@ export const MenuContextProvider = ({children}) => {
     const [menuVersion, setMenuVersion] = useState(1)
     const [showMenu, setShowMenu] = useState(false)
     const [modal, setModal] = useState(false)
-    const [hamburguesas, pizzas, bebidas] = useSheetData();
     const [pedido, setPedido] = useState([])
     const [showCarrito, setShowCarrito] = useState(false)
+    const [hamburguesas, pizzas, bebidas, promos] = useSheetData();
 
     const agregarPedido = (producto) =>{
         const existeItem = pedido.find(item => item.PRODUCTO === producto.PRODUCTO) 
@@ -58,7 +58,8 @@ export const MenuContextProvider = ({children}) => {
                 showCarrito,
                 setShowCarrito,
                 handleClick,
-                vaciarPedido
+                vaciarPedido,
+                promos
                 }}>
             {children}
 

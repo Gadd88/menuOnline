@@ -18,9 +18,7 @@ const NavButtons = () => {
     }
     const verPedido = () =>{
         setShowCarrito(true)
-    }
-    let notificacion = '';
-    if(pedido.length>0) notificacion = `before:content-['*'] before:text-white before:flex before:pt-2 before:items-center before:justify-center before:absolute before:-top-2 before:-right-2 before:bg-red-700 before:rounded-full before:w-4 before:h-4`
+    } 
     
     return (
         <div className='nav-botones'>
@@ -30,8 +28,9 @@ const NavButtons = () => {
             <figure className='btn-icono' onClick={selectBurguer}>
                 <img src={hamburguesa} alt="hamburguesa icono" />
             </figure>
-            <figure className={`btn-icono relative ${notificacion}`} onClick={verPedido}>
+            <figure className='btn-icono relative' onClick={verPedido}>
                 <img src={carrito} alt="carrito icono" />
+                <div className={`text-white ${pedido.length > 0 ? 'flex' : 'hidden'} items-center justify-center absolute -top-2 -right-2 bg-red-700 rounded-full w-5 h-5 `}>{pedido.length}</div>
             </figure>
             {
                 showCarrito

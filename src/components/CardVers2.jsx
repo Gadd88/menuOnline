@@ -12,7 +12,7 @@ const CardVers2 = ({producto}) => {
         <figure className="h-full w-40 image-bg image-bg-2 shrink-0 rounded-l-xl">
             <img src={`${URL_IMG}`} alt={`${PRODUCTO}`} className="image-bg h-full bg-gray-300 w-full rounded-l-xl"/>
         </figure>
-        <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-2xl w-7 h-7 flex items-center justify-center" onClick={()=>agregarPedido(producto)}>+</button>
+        <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-2xl w-7 h-7 flex items-center justify-center active:bg-green-400" onClick={()=>agregarPedido(producto)}>+</button>
         <div className="p-2.5 md:p-4 flex flex-col flex-grow overflow-hidden justify-between" onClick={()=>handleClick(producto)}>
             <h2 className="font-bold mb-2">{PRODUCTO}</h2>
             <div className="flex flex-col gap-2 overflow-x-auto overflow-hidden max-w-full pb-2">
