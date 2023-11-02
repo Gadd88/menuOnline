@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { useContext } from "react"
 import { MenuContext } from "../context/MenuContext"
 import borrar from '../assets/icons/delete.svg'
+import borrarPedido from '../assets/icons/borrarPedido.svg'
 import wsp from '../assets/icons/wsp.svg'
 
 
 const ModalCarrito = ({pedido}) => {
 
-    const { setShowCarrito, borrarProducto } = useContext(MenuContext)
+    const { setShowCarrito, borrarProducto, vaciarPedido } = useContext(MenuContext)
     let total = 0;
 
     const totalFunc = (pedido) =>{
@@ -90,7 +91,10 @@ const ModalCarrito = ({pedido}) => {
                     </div>
                 </div>
                 <p className='p-2 text-center font-bold'>Total: ${total}</p>
-                <button className='btn p-2 bg-black text-white active:bg-slate-600 rounded-b-xl'><a href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20Carmona,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>Enviar pedido <img src={wsp} alt="whatsapp" /></a></button>
+                <div className='flex items-center justify-between rounded-b-xl overflow-y-hidden'>
+                    <button className='btn p-2 bg-red-800 text-white active:bg-red-300 flex items-center justify-center gap-2 w-[50%]' onClick={vaciarPedido}>Vaciar Pedido<img src={borrarPedido} alt="eliminar" className='min-w-[20px]'/></button>
+                    <button className='btn p-2 bg-black text-white active:bg-slate-600 w-[50%]'><a href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20Carmona,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>Enviar pedido <img src={wsp} alt="whatsapp" className='min-w-[20px]'/></a></button>
+                </div>
             </div>
         </div>
     </div>

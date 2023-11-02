@@ -30,6 +30,9 @@ export const MenuContextProvider = ({children}) => {
         const draft = pedido.filter(item => item.PRODUCTO !== PRODUCTO)
         setPedido(draft)
     }
+    const vaciarPedido = () =>{
+        setPedido([])
+    }
     const handleClick = (producto) => {
         setModal(true)
         setModalData(producto)
@@ -54,7 +57,8 @@ export const MenuContextProvider = ({children}) => {
                 borrarProducto,
                 showCarrito,
                 setShowCarrito,
-                handleClick
+                handleClick,
+                vaciarPedido
                 }}>
             {children}
 
