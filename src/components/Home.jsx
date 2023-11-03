@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <section className='home'>
-        <h1>{month.toUpperCase()}</h1>
+        <h1 className="text-left bg-background text-2xl md:text-3xl mb-6 uppercase border border-gray-400 p-4">{month.toUpperCase()}</h1>
         <section className='home-imgs'>
             {
                 promos?.length > 0
