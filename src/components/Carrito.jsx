@@ -85,7 +85,7 @@ const Carrito = () => {
                                 <Button color="danger" variant="light" radius='none' onClick={vaciarPedido}>
                                    Vaciar Productos <img src={borrar} alt="vaciar" className='min-w-[20px]'/>
                                 </Button>
-                                <Button color="primary" variant='flat' radius='none' onPress={onClose}>
+                                <Button color="primary" variant='flat' radius='none'>
                                     <a href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20Carmona,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>Enviar pedido <img src={wsp} alt="whatsapp" className='min-w-[20px]'/></a>
                                 </Button>
                             </ModalFooter>
