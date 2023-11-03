@@ -82,7 +82,7 @@ const Carrito = () => {
                                 
                             </ModalBody>
                             <ModalFooter className='flex justify-center items-center'>
-                                <Button color="danger" variant="light" radius='none' onPress={onClose} onClick={vaciarPedido}>
+                                <Button color="danger" variant="light" radius='none' onClick={vaciarPedido}>
                                    Vaciar Productos <img src={borrar} alt="vaciar" className='min-w-[20px]'/>
                                 </Button>
                                 <Button color="primary" variant='flat' radius='none' onPress={onClose}>
