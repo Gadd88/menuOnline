@@ -6,7 +6,6 @@ const Home = () => {
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' });
     const {promos} = useContext(MenuContext)
-    console.log(promos)
 
   return (
     <section className='home'>

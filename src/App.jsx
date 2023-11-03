@@ -1,4 +1,3 @@
-import { useContext, useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Menu from "./components/Menu"
@@ -8,12 +7,13 @@ import { MenuContextProvider } from "./context/MenuProvider"
 function App() {
 
   return (
-    <MenuContextProvider>
-      <Header/>
-      <NavButtons/>
-      <Menu/>
-      <Footer/>
-    </MenuContextProvider>
+    
+      <MenuContextProvider>
+        <Header/>
+        <NavButtons/>
+        <Menu/>
+        <Footer/>
+      </MenuContextProvider>
   )
 }
 

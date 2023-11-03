@@ -1,5 +1,5 @@
 {
-  "name": "menucarmona",
+  "name": "menuOnline",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-papaparse": "^4.4.0"

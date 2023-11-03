@@ -2,14 +2,12 @@ import { useState } from "react"
 import { MenuContext } from "./MenuContext"
 import {useSheetData} from '../hooks/useSheetData'
 
+
 export const MenuContextProvider = ({children}) => {
 
-    const [modalData, setModalData] = useState([])
     const [menuVersion, setMenuVersion] = useState(1)
     const [showMenu, setShowMenu] = useState(false)
-    const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([])
-    const [showCarrito, setShowCarrito] = useState(false)
     const [hamburguesas, pizzas, bebidas, promos] = useSheetData();
 
     const agregarPedido = (producto) =>{
@@ -33,10 +31,6 @@ export const MenuContextProvider = ({children}) => {
     const vaciarPedido = () =>{
         setPedido([])
     }
-    const handleClick = (producto) => {
-        setModal(true)
-        setModalData(producto)
-    }
 
     return (
         <MenuContext.Provider
@@ -44,10 +38,6 @@ export const MenuContextProvider = ({children}) => {
                 hamburguesas,
                 pizzas,
                 bebidas,
-                modal,
-                setModal,
-                modalData,
-                setModalData,
                 showMenu,
                 setShowMenu,
                 menuVersion,
@@ -55,9 +45,6 @@ export const MenuContextProvider = ({children}) => {
                 agregarPedido,
                 pedido,
                 borrarProducto,
-                showCarrito,
-                setShowCarrito,
-                handleClick,
                 vaciarPedido,
                 promos
                 }}>
