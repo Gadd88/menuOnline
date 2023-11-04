@@ -5,13 +5,11 @@ import {Card, Divider, CardHeader, Image, CardFooter, Button, useDisclosure, Mod
 const CardVers1 = ({producto}) => {
     
     const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION} = producto
-    const img = `${URL_IMG}`
-    const {agregarPedido} = useContext(MenuContext)
     const {isOpen, onOpenChange, onOpen} = useDisclosure()
 
 
     return (
-        <div className="relative">
+        <div>
             {/* <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10" onClick={()=>agregarPedido(producto)}>+</button> */}
             <Card isFooterBlurred className="w-[250px] h-[350px] bg-black relative" isPressable onClick={onOpen}>
                 <CardHeader className="absolute z-10 top-5 flex-col items-start ">

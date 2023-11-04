@@ -9,7 +9,7 @@ export const MenuContextProvider = ({children}) => {
     const [showMenu, setShowMenu] = useState(false)
     const [pedido, setPedido] = useState([])
     const [hamburguesas, pizzas, bebidas, promos] = useSheetData();
-
+    
     const agregarPedido = (producto) =>{
         const existeItem = pedido.find(item => item.PRODUCTO === producto.PRODUCTO) 
         if(existeItem){

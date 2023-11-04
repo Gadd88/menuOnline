@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { MenuContext } from '../context/MenuContext';
-// import { promosImgs } from '../data/promos'
 
 const Home = () => {
     const date = new Date();

@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { MenuContext } from '../context/MenuContext'
-import logo from '../assets/img/carmona.png'
 
 const Header = () => {
 
@@ -13,7 +12,6 @@ const Header = () => {
     <header className="header">
       <figure>
         <div className='text-2xl text-center text-white'>Logo de tu Negocio</div>
-        {/* <img src={logo} alt="Carmona Delivery" className='logo-carmona'/> */}
       </figure>
       {
         showMenu
@@ -25,7 +23,6 @@ const Header = () => {
                 onChange={handleVersion}>
                 <option value="1">Tarjetas</option>
                 <option value="2">Columnas</option>
-                <option value="3">Listas</option>
               </select>
             </section>)
         : null
