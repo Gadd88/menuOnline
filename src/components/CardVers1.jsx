@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MenuContext } from "../context/MenuContext";
-import {Card, Divider, CardHeader, Image, CardBody, CardFooter, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
+import {Card, Divider, CardHeader, Image, CardFooter, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
 
 const CardVers1 = ({producto}) => {
     
@@ -13,10 +13,10 @@ const CardVers1 = ({producto}) => {
     return (
         <div className="relative">
             {/* <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10" onClick={()=>agregarPedido(producto)}>+</button> */}
-            <Card isFooterBlurred className="w-[250px] h-[350px] bg-black p-0 relative" isPressable onClick={onOpen}>
+            <Card isFooterBlurred className="w-[250px] h-[350px] bg-black relative" isPressable onClick={onOpen}>
                 <CardHeader className="absolute z-10 top-5 flex-col items-start ">
                     <p className="text-tiny text-white uppercase font-bold">New</p>
-                    <h4 className="text-black font-bold text-md bg-white/50 w-[250px] rounded-s-xl p-2 text-left">{PRODUCTO}</h4>
+                    <h4 className="text-black font-bold text-md bg-white/70 w-[250px] rounded-s-xl p-2 text-left">{PRODUCTO}</h4>
                 </CardHeader>
                 <Image
                     removeWrapper

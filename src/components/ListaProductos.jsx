@@ -18,7 +18,7 @@ const ListaProductos = ({productos}) => {
         {
             productos && productos.length > 0
                 ?    (<div className="1fm-category my-6 overflow-hidden relative">
-                        <h2 className="text-center bg-background text-2xl md:text-3xl mb-6 font-semibold uppercase border border-gray-400 p-4">{productos[0].CATEGORIA}</h2>
+                        <h2 className="text-left bg-background text-2xl md:text-3xl mb-6 uppercase border border-gray-400 p-4">{productos[0].CATEGORIA}</h2>
                         <div className={`${menuVersion == 2 ? cardver2 : menuVersion == 3 ? cardver3 : cardver1}`}>
                             {
                                 productos.map( (producto) => (

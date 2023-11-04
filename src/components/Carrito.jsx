@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import carrito from '../assets/icons/cart.svg'
 import wsp from '../assets/icons/wsp.svg'
 import borrar from '../assets/icons/delete.svg'
-import vaciar from '../assets/icons/borrarPedido.svg'
 import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
 import { MenuContext } from '../context/MenuContext';
 
@@ -86,7 +85,7 @@ const Carrito = () => {
                                    Vaciar Productos <img src={borrar} alt="vaciar" className='min-w-[20px]'/>
                                 </Button>
                                 <Button color="primary" variant='flat' radius='none'>
-                                    <a href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20Carmona,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>Enviar pedido <img src={wsp} alt="whatsapp" className='min-w-[20px]'/></a>
+                                    <a href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>Enviar pedido <img src={wsp} alt="whatsapp" className='min-w-[20px]'/></a>
                                 </Button>
                             </ModalFooter>
                         </>
