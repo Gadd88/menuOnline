@@ -35,9 +35,6 @@ export const MenuContextProvider = ({children}) => {
     return (
         <MenuContext.Provider
             value={{
-                hamburguesas,
-                pizzas,
-                bebidas,
                 showMenu,
                 setShowMenu,
                 menuVersion,
@@ -46,7 +43,10 @@ export const MenuContextProvider = ({children}) => {
                 pedido,
                 borrarProducto,
                 vaciarPedido,
-                promos
+                promos,
+                hamburguesas,
+                pizzas,
+                bebidas
                 }}>
             {children}
 

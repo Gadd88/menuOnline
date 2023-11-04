@@ -1,13 +1,13 @@
 import Home from './Home';
 import Proptypes from 'prop-types'
 import ListaProductos from './ListaProductos';
-import { MenuContext } from '../context/MenuContext';
 import { useContext } from 'react';
+import { MenuContext } from '../context/MenuContext';
+
 
 
 const Menu = () => {
-
-    const {hamburguesas, pizzas, bebidas, showMenu} = useContext(MenuContext)
+    const {showMenu, hamburguesas, pizzas, bebidas} = useContext(MenuContext)
 
     return (
         <>
