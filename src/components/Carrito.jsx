@@ -37,8 +37,12 @@ const Carrito = () => {
         <Modal
             isOpen={isOpen}
             placement='center'
+            backdrop='blur'
             onOpenChange={onOpenChange}
             pedido={pedido}
+            scrollBehavior='outside'
+            classNames={{closeButton:'mt-1 mr-1'}}
+            className='max-h-[450px] overflow-y-auto'
             aria-label='modal carrito'
             >
             <ModalContent aria-label='modal carrito dark text-foreground'>
