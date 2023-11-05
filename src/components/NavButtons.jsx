@@ -6,7 +6,7 @@ import Carrito from './Carrito';
 
 const NavButtons = () => {
 
-    const {setShowMenu} = useContext(MenuContext)
+    const {setShowMenu, showMenu, pedido} = useContext(MenuContext)
     
     const selectBurguer = () =>{
         setShowMenu(true)
@@ -23,7 +23,10 @@ const NavButtons = () => {
             <figure className='btn-icono' onClick={selectBurguer}>
                 <img src={hamburguesa} alt="hamburguesa icono" />
             </figure>
-            <Carrito aria-label='modal carrito'/>
+            {
+                pedido.length>0 && <Carrito aria-label='modal carrito'/>
+            }
+            
         </div>
     )
 }

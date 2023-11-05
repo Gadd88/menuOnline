@@ -11,7 +11,7 @@ const Footer = () => {
                 </a>
             </figure>
             <figure>
-                <a href="https://wa.me/5493704264971" target='_blank' rel='noreferrer noopener'>
+                <a href="https://wa.me/5493704632110" target='_blank' rel='noreferrer noopener'>
                     <img src={wsp} alt="whatsapp logo" className='social-wsp' />
                 </a>
             </figure>

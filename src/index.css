@@ -10,6 +10,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 *::-webkit-scrollbar{
   display: none;
@@ -70,7 +71,7 @@ header select{
   cursor: pointer;
 }
 .btn-icono:active{
-  background-color: #1f3251;
+  background-color: #121212;
 }
 .btn-icono:active img{
   filter: invert(100%);

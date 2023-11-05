@@ -24,11 +24,8 @@ const ListaProductos = ({productos}) => {
                                         >
                                             {
                                                 menuVersion == 1 
-                                                ? (<div className='relative' >
-                                                        <CardVers1 producto={producto}/>
-                                                        <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10" onClick={()=>agregarPedido(producto)}>+</button>
-                                                    </div>) 
-                                                : <CardVers2 producto={producto}/> 
+                                                ? <CardVers1 producto={producto} agregarPedido={agregarPedido}/> 
+                                                : <CardVers2 producto={producto} agregarPedido={agregarPedido}/> 
                                             }
 
                                     </div>
