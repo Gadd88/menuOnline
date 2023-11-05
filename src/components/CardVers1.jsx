@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { MenuContext } from "../context/MenuContext";
 import {Card, Divider, CardHeader, Image, CardFooter, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
 
 const CardVers1 = ({producto, agregarPedido}) => {

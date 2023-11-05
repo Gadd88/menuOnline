@@ -3,7 +3,6 @@ import { MenuContext } from "../context/MenuContext"
 import CardVers1 from "./CardVers1"
 import CardVers2 from "./CardVers2"
 
-
 const ListaProductos = ({productos}) => {
 
     const { menuVersion, agregarPedido } = useContext(MenuContext)
