@@ -6,6 +6,8 @@ import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell, 
 import { MenuContext } from '../context/MenuContext';
 
 
+
+
 const Carrito = () => {
     const {pedido, borrarProducto, vaciarPedido} = useContext(MenuContext)
     const {isOpen, onOpen, onOpenChange} = useDisclosure();

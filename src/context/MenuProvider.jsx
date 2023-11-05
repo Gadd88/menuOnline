@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { MenuContext } from "./MenuContext"
 import {useSheetData} from '../hooks/useSheetData'
+import { toast } from 'sonner';
 
 
 export const MenuContextProvider = ({children}) => {
@@ -23,13 +24,24 @@ export const MenuContextProvider = ({children}) => {
                 ...pedido, {...producto, CANTIDAD: 1}
             ])
         }
+        toast.success('Producto agregado...',{
+            position: 'top-center',
+            invert: true})
     }
     const borrarProducto = (PRODUCTO) =>{
         const draft = pedido.filter(item => item.PRODUCTO !== PRODUCTO)
         setPedido(draft)
+        toast.warning('Producto eliminado..',{
+            position: 'top-center',
+            invert: true
+        })
     }
     const vaciarPedido = () =>{
         setPedido([])
+        toast.warning('Carrito vacio..', {
+            position: 'top-center',
+            invert: true
+        })
     }
 
     return (

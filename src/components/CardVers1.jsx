@@ -1,13 +1,14 @@
 import {Card, Divider, CardHeader, Image, CardFooter, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
+import { toast } from "sonner";
 
-const CardVers1 = ({producto, agregarPedido}) => {
+const CardVers1 = ({producto}) => {
     
     const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION} = producto
     const {isOpen, onOpenChange, onOpen} = useDisclosure()
+    
 
     return (
-        <div className="relative">
-            <button className="absolute -top-3 -right-2 bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10" onClick={()=>agregarPedido(producto)}>+</button>
+        <div>
             <Card isFooterBlurred className="w-[250px] h-[350px] dark relative" isPressable onClick={onOpen}>
                 <CardHeader className="absolute z-10 top-2 flex-col items-start ">
                     <p className="text-tiny text-white uppercase font-bold">New</p>
