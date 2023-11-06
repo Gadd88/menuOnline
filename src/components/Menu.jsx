@@ -1,13 +1,15 @@
 import Home from './Home';
 import Proptypes from 'prop-types'
 import ListaProductos from './ListaProductos';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { MenuContext } from '../context/MenuContext';
 
 
 
 const Menu = () => {
-    const {showMenu, hamburguesas, pizzas, bebidas} = useContext(MenuContext)
+    const {showMenu, hamburguesas, pizzas, bebidas, seleccionado} = useContext(MenuContext)
+
+
 
     return (
         <>
@@ -16,13 +18,20 @@ const Menu = () => {
                 ? (
                     <div id='OneFoodMenu' className='container'>
                         <div id='OneFoodMenuItems'>
-                            <ListaProductos productos={hamburguesas}/>
-                        </div>
-                        <div id='OneFoodMenuItems'>
-                            <ListaProductos productos={pizzas}/>
-                        </div>
-                        <div id="OneFoodMenuItems">
-                            <ListaProductos productos={bebidas}/>
+                            {
+                                seleccionado === 'Todos' 
+                                ?(<>
+                                    <ListaProductos productos={hamburguesas}/>
+                                    <ListaProductos productos={pizzas}/>
+                                    <ListaProductos productos={bebidas}/>
+                                </>)
+                                : seleccionado === 'Hamburguesas'
+                                    ? <ListaProductos productos={hamburguesas}/>
+                                    : seleccionado === 'Pizzas'
+                                        ? <ListaProductos productos={pizzas}/>
+                                        : <ListaProductos productos={bebidas}/>
+                            }
+
                         </div>
                     </div>
                 )

@@ -51,26 +51,38 @@ const Carrito = () => {
                 {
                     (onClose)=>(
                         <>
-                            <ModalHeader className="flex flex-col gap-1">Productos</ModalHeader>
-                            <ModalBody>
+                            <ModalHeader 
+                                className="flex flex-col gap-1"
+                                aria-label='modal'
+                                >
+                                    Productos
+                            </ModalHeader>
+                            <ModalBody
+                                aria-label='modal'
+                                >
                                 {
                                     pedido.length > 0
                                     ? (<>
                                         <Table
                                             removeWrapper
-                                            className='dark'>
-                                            <TableHeader>
+                                            className='dark'
+                                            aria-label='modal'>
+                                            <TableHeader
+                                                aria-label='modal'>
                                                 <TableColumn>Cant.</TableColumn>
                                                 <TableColumn>Producto</TableColumn>
                                                 <TableColumn>Precio</TableColumn>
                                                 <TableColumn></TableColumn>
                                             </TableHeader>
                                             <TableBody
-                                                emptyContent={<p>No hay productos seleccionados</p>}>
+                                                emptyContent={<p>No hay productos seleccionados</p>}
+                                                aria-label='modal'
+                                                >
                                                 {
                                                     pedido.map(item=>(
                                                         <TableRow
-                                                            key={window.crypto.randomUUID().slice(4)}>
+                                                            key={window.crypto.randomUUID().slice(4)}
+                                                            aria-label='item carrito'>
                                                                 <TableCell>{item.CANTIDAD}</TableCell>
                                                                 <TableCell className='text-tiny'>{item.PRODUCTO}</TableCell>
                                                                 <TableCell>{item.PRECIO}</TableCell>
@@ -86,7 +98,10 @@ const Carrito = () => {
                                 }
                                 
                             </ModalBody>
-                            <ModalFooter className='flex justify-center items-center'>
+                            <ModalFooter 
+                                className='flex justify-center items-center'
+                                aria-label='modal'
+                                >
                                 <Button color="danger" variant="light" radius='none' onClick={vaciarPedido}>
                                    Vaciar Productos <img src={borrar} alt="vaciar" className='min-w-[20px]'/>
                                 </Button>

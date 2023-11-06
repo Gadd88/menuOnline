@@ -6,10 +6,11 @@ import { toast } from 'sonner';
 
 export const MenuContextProvider = ({children}) => {
 
-    const [menuVersion, setMenuVersion] = useState(1)
+    const [menuVersion, setMenuVersion] = useState('0')
     const [showMenu, setShowMenu] = useState(false)
     const [pedido, setPedido] = useState([])
     const [hamburguesas, pizzas, bebidas, promos] = useSheetData();
+    const [seleccionado, setSeleccionado] = useState('Todos')
     
     const agregarPedido = (producto) =>{
         const existeItem = pedido.find(item => item.PRODUCTO === producto.PRODUCTO) 
@@ -26,21 +27,25 @@ export const MenuContextProvider = ({children}) => {
         }
         toast.success('Producto agregado...',{
             position: 'top-center',
-            invert: true})
+            invert: false,
+            duration: 1000
+        })
     }
     const borrarProducto = (PRODUCTO) =>{
         const draft = pedido.filter(item => item.PRODUCTO !== PRODUCTO)
         setPedido(draft)
-        toast.warning('Producto eliminado..',{
+        toast.error('Producto eliminado..',{
             position: 'top-center',
-            invert: true
+            invert: false,
+            duration: 1000
         })
     }
     const vaciarPedido = () =>{
         setPedido([])
         toast.warning('Carrito vacio..', {
             position: 'top-center',
-            invert: true
+            invert: false,
+            duration: 1000
         })
     }
 
@@ -58,7 +63,9 @@ export const MenuContextProvider = ({children}) => {
                 promos,
                 hamburguesas,
                 pizzas,
-                bebidas
+                bebidas,
+                seleccionado,
+                setSeleccionado
                 }}>
             {children}
 

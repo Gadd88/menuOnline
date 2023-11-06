@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { MenuContext } from "../context/MenuContext"
 import CardVers1 from "./CardVers1"
 import CardVers2 from "./CardVers2"
-import { Toaster, toast } from "sonner"
+import { Toaster } from "sonner"
 
 const ListaProductos = ({productos}) => {
 
@@ -16,20 +16,20 @@ const ListaProductos = ({productos}) => {
         {
             productos && productos.length > 0
                 ?    (<div className="1fm-category my-6 overflow-hidden relative">
-                        <Toaster toastOptions={{style:{background: '#121212'}}}/>
+                        <Toaster /* toastOptions={{style:{background: '#121212'}}} */ richColors={true}/>
                         <h2 className="text-left bg-background text-2xl md:text-3xl mb-6 uppercase border border-gray-400 p-4">{productos[0].CATEGORIA}</h2>
-                        <div className={`${menuVersion == 2 ? cardver2 : cardver1}`}>
+                        <div className={`${menuVersion == 1 ? cardver2 : cardver1}`}>
                             {
                                 productos.map( (producto) => (
                                     <div 
                                         key={window.crypto.randomUUID().slice(0,4)}
                                         className="relative"
                                         >
-                                            <button className={`absolute -top-3 ${menuVersion==1 ? '-right-2' : 'right-2'} bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10`} onClick={()=>agregarPedido(producto)}>+</button>
+                                            <button className={`absolute -top-3 ${menuVersion==0 ? '-right-2' : 'right-2'} bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10`} onClick={()=>agregarPedido(producto)}>+</button>
                                             {
-                                                menuVersion == 1 
-                                                ? (<CardVers1 producto={producto}/>) 
-                                                : <CardVers2 producto={producto}/> 
+                                                menuVersion == 0 
+                                                ? (<CardVers1 producto={producto} aria-label={producto.PRODUCTO}/>) 
+                                                : <CardVers2 producto={producto} aria-label={producto.PRODUCTO}/> 
                                             }
 
                                     </div>

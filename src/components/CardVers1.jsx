@@ -1,5 +1,4 @@
 import {Card, Divider, CardHeader, Image, CardFooter, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
-import { toast } from "sonner";
 
 const CardVers1 = ({producto}) => {
     
