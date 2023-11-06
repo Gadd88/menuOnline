@@ -20,7 +20,7 @@ html{
 }
 /* HEADER */
 .header{
-  background-color: #000;
+  background-color: #121212;
   color:#fff;
   font-size: 2rem;
   text-align: center;
@@ -124,7 +124,7 @@ header figure{
 }
 /* FOOTER */
 .footer{
-  background-color: #000;
+  background-color: #121212;
   color: #fff;
   bottom: 0;
   width: 100%;
