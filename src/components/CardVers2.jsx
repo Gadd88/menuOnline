@@ -1,8 +1,40 @@
+import { Accordion, Avatar, AccordionItem } from "@nextui-org/react"
+
 const CardVers2 = ({producto}) => {
     const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION} = producto
 
   return (
-    <div className="1fm-product flex cursor-pointer rounded-xl flex-shrink-0 border-2 border-gray-200 drop-shadow-md h-44 relative w-[98%] p-1 dark bg-[#121212]/90 text-foreground">
+        <Accordion 
+            selectionMode="multiple" 
+            variant='splitted'
+            >
+            <AccordionItem
+                key={PRODUCTO}
+                aria-label={PRODUCTO}
+                className="cursor-default"
+                startContent={
+                    <Avatar
+                    isBordered
+                    color="warning"
+                    radius="sm"
+                    className="w-20 h-20 text-large"
+                    src={URL_IMG}
+                    />
+                }
+                subtitle=''
+                title={PRODUCTO}
+                >
+                    <p>{DESCRIPCION}</p>
+                    <p className="font-bold relative -right-[75%] my-4 border-2 border-warning inline-block rounded-md p-2 ">{PRECIO}</p>        
+            </AccordionItem>
+        </Accordion>
+  )
+}
+
+export default CardVers2
+
+
+{/* <div className="1fm-product flex cursor-pointer rounded-xl flex-shrink-0 border-2 border-gray-200 drop-shadow-md h-44 relative w-[98%] p-1 dark bg-[#121212]/90 text-foreground">
         <figure className="h-full w-40 image-bg image-bg-2 shrink-0 rounded-lg overflow-hidden">
             <img src={`${URL_IMG}`} alt={`${PRODUCTO}`} className="image-bg h-full w-full object-cover scale-125 bg-black"/>
         </figure>
@@ -20,8 +52,4 @@ const CardVers2 = ({producto}) => {
                 </div>
             </div>
         </div>
-    </div>
-  )
-}
-
-export default CardVers2
+    </div> */}

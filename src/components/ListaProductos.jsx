@@ -3,6 +3,7 @@ import { MenuContext } from "../context/MenuContext"
 import CardVers1 from "./CardVers1"
 import CardVers2 from "./CardVers2"
 import { Toaster } from "sonner"
+import { Accordion } from "@nextui-org/react"
 
 const ListaProductos = ({productos}) => {
 
@@ -21,11 +22,12 @@ const ListaProductos = ({productos}) => {
                         <div className={`${menuVersion == 1 ? cardver2 : cardver1}`}>
                             {
                                 productos.map( (producto) => (
+                                    
                                     <div 
                                         key={window.crypto.randomUUID().slice(0,4)}
                                         className="relative"
                                         >
-                                            <button className={`absolute -top-3 ${menuVersion==0 ? '-right-2' : 'right-2'} bg-green-700 rounded-full p-1 text-white text-lg w-8 h-8 active:bg-green-400 z-10`} onClick={()=>agregarPedido(producto)}>+</button>
+                                            <button className={`absolute -top-3 ${menuVersion==0 ? '-right-2' : 'right-1'} bg-warning rounded-full p-1 text-white text-lg w-8 h-8 active:bg-yellow-300 z-10`} onClick={()=>agregarPedido(producto)}>+</button>
                                             {
                                                 menuVersion == 0 
                                                 ? (<CardVers1 producto={producto} aria-label={producto.PRODUCTO}/>) 
