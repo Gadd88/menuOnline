@@ -99,14 +99,28 @@ const Carrito = () => {
                                 
                             </ModalBody>
                             <ModalFooter 
-                                className='flex justify-center items-center'
+                                className='flex justify-center items-center flex-col'
                                 aria-label='modal'
                                 >
-                                <Button color="danger" variant="light" radius='none' onClick={vaciarPedido}>
-                                   Vaciar Productos <img src={borrar} alt="vaciar" className='min-w-[20px]'/>
+                                <Button 
+                                    color="warning" 
+                                    variant='shadow' 
+                                    radius='none' 
+                                    as={Link} href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} 
+                                    className='flex items-center justify-center gap-2 w-72'
+                                    isDisabled={pedido.length>0 ? false : true}
+                                    >
+                                        Enviar pedido <img src={wsp} alt="whatsapp" className='min-w-[20px]'/>
                                 </Button>
-                                <Button color="primary" variant='flat' radius='none' as={Link} href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} className='flex items-center justify-center gap-2'>
-                                    Enviar pedido <img src={wsp} alt="whatsapp" className='min-w-[20px]'/>
+                                <Button 
+                                    color="danger" 
+                                    variant="light" 
+                                    radius='none' 
+                                    onClick={vaciarPedido}
+                                    isDisabled={pedido.length>0 ? false : true} 
+                                    className='w-72 flex items-center justify-center gap-2'
+                                    >
+                                        Vaciar Productos <img src={borrar} alt="vaciar" className='min-w-[18px]'/>
                                 </Button>
                             </ModalFooter>
                         </>

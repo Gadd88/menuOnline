@@ -23,10 +23,7 @@ const NavButtons = () => {
             <figure className='btn-icono' onClick={selectBurguer}>
                 <img src={hamburguesa} alt="hamburguesa icono" />
             </figure>
-            {
-                pedido.length>0 && <Carrito aria-label='modal carrito'/>
-            }
-            
+            <Carrito aria-label='modal carrito'/>
         </div>
     )
 }
