@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='footer'>
         <div className='footer-sociales'>
             <figure>
-                <a href="https://www.instagram.com/carmonadelivery" target='_blank' rel='noreferrer noopener'>
+                <a href="https://www.instagram.com/matiassaade" target='_blank' rel='noreferrer noopener'>
                     <img src={insta} alt="instagram logo" className='social-insta'/>
                 </a>
             </figure>

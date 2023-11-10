@@ -28,6 +28,8 @@ const Carrito = () => {
     }
     convertirPedido(pedido)
 
+    let num = ''
+
   return (
     <figure 
         className='btn-icono relative' 
@@ -106,7 +108,7 @@ const Carrito = () => {
                                     color="warning" 
                                     variant='shadow' 
                                     radius='none' 
-                                    as={Link} href={`https://api.whatsapp.com/send?phone=+543704632110&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} 
+                                    as={Link} href={`https://api.whatsapp.com/send?phone=+54${num}&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} 
                                     className='flex items-center justify-center gap-2 w-72'
                                     isDisabled={pedido.length>0 ? false : true}
                                     >
