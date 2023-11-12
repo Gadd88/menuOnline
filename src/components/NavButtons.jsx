@@ -6,7 +6,7 @@ import Carrito from './Carrito';
 
 const NavButtons = () => {
 
-    const {setShowMenu, showMenu, pedido} = useContext(MenuContext)
+    const {setShowMenu} = useContext(MenuContext)
     
     const selectBurguer = () =>{
         setShowMenu(true)

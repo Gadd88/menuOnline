@@ -1,7 +1,7 @@
 import Home from './Home';
 import Proptypes from 'prop-types'
 import ListaProductos from './ListaProductos';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { MenuContext } from '../context/MenuContext';
 
 

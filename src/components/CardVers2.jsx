@@ -1,6 +1,13 @@
 import { Accordion, Avatar, AccordionItem } from "@nextui-org/react"
+import {PropTypes} from 'prop-types'
+
 
 const CardVers2 = ({producto}) => {
+    CardVers2.propTypes = {
+        producto: PropTypes.object
+    }
+
+
     const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION} = producto
 
   return (

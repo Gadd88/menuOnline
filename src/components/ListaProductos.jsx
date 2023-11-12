@@ -26,11 +26,11 @@ const ListaProductos = ({productos}) => {
                                         key={window.crypto.randomUUID().slice(0,4)}
                                         className="relative"
                                         >
-                                            <button className={`absolute -top-3 ${menuVersion==0 ? '-right-2' : 'right-1'} bg-warning rounded-full p-1 text-white text-lg w-8 h-8 active:bg-yellow-300 z-10`} onClick={()=>agregarPedido(producto)}>+</button>
+                                            <button className={`absolute -top-3 ${menuVersion==0 ? '-right-2' : 'right-1'} bg-warning rounded-full border-1 border-white p-1 text-white text-lg w-8 h-8 active:bg-yellow-300 z-10`} onClick={()=>agregarPedido(producto)}>+</button>
                                             {
                                                 menuVersion == 0 
                                                 ? (<CardVers1 producto={producto} aria-label={producto.PRODUCTO}/>) 
-                                                : <CardVers2 producto={producto} aria-label={producto.PRODUCTO}/> 
+                                                : (<CardVers2 producto={producto} aria-label={producto.PRODUCTO}/>) 
                                             }
 
                                     </div>

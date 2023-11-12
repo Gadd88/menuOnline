@@ -1,6 +1,10 @@
 import {Card, Divider, CardHeader, Image, CardFooter, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
+import { PropTypes } from "prop-types";
 
 const CardVers1 = ({producto}) => {
+    CardVers1.propTypes = {
+        producto: PropTypes.object 
+    }
     
     const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION} = producto
     const {isOpen, onOpenChange, onOpen} = useDisclosure()
@@ -8,7 +12,7 @@ const CardVers1 = ({producto}) => {
 
     return (
         <div>
-            <Card isFooterBlurred className="w-[250px] h-[350px] dark relative" isPressable onClick={onOpen}>
+            <Card isFooterBlurred className="w-[250px] h-[350px] dark relative shadow-[0_5px_5px_#aaa]" isPressable onClick={onOpen}>
                 <CardHeader className="absolute z-10 top-2 flex-col items-start ">
                     <p className="text-tiny text-white uppercase font-bold">New</p>
                     <h4 className="text-black font-bold text-md bg-white/70 w-[250px] rounded-s-xl p-2 text-left">{PRODUCTO}</h4>

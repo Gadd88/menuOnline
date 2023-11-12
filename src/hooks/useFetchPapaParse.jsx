@@ -25,7 +25,11 @@ const useFetchPapaParse = (url) => {
         });
     }
     useEffect(() => {
-      fetchData()
+        try {
+            fetchData()
+        } catch (error) {
+            console.log(error)
+        }
     }, [])
 
     return [productos]
