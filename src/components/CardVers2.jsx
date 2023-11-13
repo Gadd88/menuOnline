@@ -12,7 +12,7 @@ const CardVers2 = ({producto}) => {
 
   return (
         <Accordion 
-            selectionMode="multiple" 
+            selectionMode="single" 
             variant='splitted'
             >
             <AccordionItem
