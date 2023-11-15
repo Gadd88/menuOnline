@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
-import { MenuContext } from '../context/MenuContext';
 import { Spinner } from '@nextui-org/react';
+import { useEffect, useState } from 'react';
+import { useSheetData } from '../hooks/useSheetData';
 
 const Home = () => {
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' });
-    const {promos} = useContext(MenuContext)
+    const {promos} = useSheetData()
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {

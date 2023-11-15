@@ -1,15 +1,11 @@
-import React, { useContext } from 'react'
 import carrito from '../assets/icons/cart.svg'
 import wsp from '../assets/icons/wsp.svg'
 import borrar from '../assets/icons/delete.svg'
 import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell, Button, useDisclosure, Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter, Link} from "@nextui-org/react";
-import { MenuContext } from '../context/MenuContext';
-
-
-
+import { useCarritoStore } from '../store/useCarritoStore';
 
 const Carrito = () => {
-    const {pedido, borrarProducto, vaciarPedido} = useContext(MenuContext)
+    const {pedido, borrarProducto, vaciarPedido} = useCarritoStore()
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     let total = 0;
 
@@ -88,7 +84,7 @@ const Carrito = () => {
                                                                 <TableCell>{item.CANTIDAD}</TableCell>
                                                                 <TableCell className='text-tiny'>{item.PRODUCTO}</TableCell>
                                                                 <TableCell>{item.PRECIO}</TableCell>
-                                                                <TableCell><Button variant='flat' color='danger' isIconOnly onClick={()=>borrarProducto(item.PRODUCTO)}><img src={borrar} alt="borrar"/></Button></TableCell>
+                                                                <TableCell><Button variant='flat' color='danger' isIconOnly onClick={()=>borrarProducto(item)}><img src={borrar} alt="borrar"/></Button></TableCell>
                                                         </TableRow>
                                                     ))
                                                 }
@@ -108,7 +104,7 @@ const Carrito = () => {
                                     color="warning" 
                                     variant='shadow' 
                                     radius='none' 
-                                    as={Link} href={`https://api.whatsapp.com/send?phone=+54${num}&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} 
+                                    as={Link} /* href={`https://api.whatsapp.com/send?phone=+54${num}&text=Hola%20TuNegocio,%20me%20gustaria%20pedirte%20lo%20siguiente:%0A${pedidoStr}`} */ 
                                     className='flex items-center justify-center gap-2 w-72'
                                     isDisabled={pedido.length>0 ? false : true}
                                     >

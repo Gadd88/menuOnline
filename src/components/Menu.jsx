@@ -3,12 +3,13 @@ import Proptypes from 'prop-types'
 import ListaProductos from './ListaProductos';
 import { useContext } from 'react';
 import { MenuContext } from '../context/MenuContext';
+import { useSheetData } from '../hooks/useSheetData';
 
 
 
 const Menu = () => {
-    const {showMenu, hamburguesas, pizzas, bebidas, seleccionado} = useContext(MenuContext)
-
+    const {showMenu, seleccionado} = useContext(MenuContext)
+    const [hamburguesas, pizzas, bebidas] = useSheetData();
 
 
     return (
