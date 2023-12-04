@@ -9,10 +9,13 @@ const CardVers1 = ({producto}) => {
     const {PRODUCTO, PRECIO, URL_IMG, DESCRIPCION} = producto
     const {isOpen, onOpenChange, onOpen} = useDisclosure()
     
-
+    const handleClick = () =>{
+        onOpen()
+    }
     return (
-        <div>
-            <Card isFooterBlurred className="w-[250px] h-[350px] dark relative shadow-[0_5px_5px_#aaa]" isPressable onClick={onOpen}>
+        <div className="cursor-pointer" 
+            onClick={handleClick}>
+            <Card isFooterBlurred className="w-[250px] h-[350px] dark relative shadow-[0_5px_5px_#aaa]">
                 <CardHeader className="absolute z-10 top-2 flex-col items-start ">
                     <p className="text-tiny text-white uppercase font-bold">New</p>
                     <h4 className="text-black font-bold text-md bg-white/70 w-[250px] rounded-s-xl p-2 text-left">{PRODUCTO}</h4>
