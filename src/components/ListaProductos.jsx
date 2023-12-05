@@ -3,6 +3,7 @@ import { MenuContext } from "../context/MenuContext"
 import CardVers1 from "./CardVers1"
 import CardVers2 from "./CardVers2"
 import { Toaster } from "sonner"
+import { SpotlightCard } from "./SpotlightCard"
 
 const ListaProductos = ({productos}) => {
 
@@ -32,6 +33,12 @@ const ListaProductos = ({productos}) => {
                                                 ? (<CardVers1 producto={producto} aria-label={producto.PRODUCTO}/>) 
                                                 : (<CardVers2 producto={producto} aria-label={producto.PRODUCTO}/>) 
                                             }
+                                            {/* <SpotlightCard
+                                                mode="after"
+                                                from="rgba(255,255,255,0.20)"
+                                                size={400}
+                                                className="group w-64 rounded-2xl border border-white/10 bg-white/5 p-2 pb-4" 
+                                                producto={producto} /> */}
 
                                     </div>
                                 ))
