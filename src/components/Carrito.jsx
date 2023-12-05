@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import carrito from '../assets/icons/cart.svg'
 import wsp from '../assets/icons/wsp.svg'
 import borrar from '../assets/icons/delete.svg'
@@ -88,7 +88,16 @@ const Carrito = () => {
                                                                 <TableCell>{item.CANTIDAD}</TableCell>
                                                                 <TableCell className='text-tiny'>{item.PRODUCTO}</TableCell>
                                                                 <TableCell>{item.PRECIO}</TableCell>
-                                                                <TableCell><Button variant='flat' color='danger' isIconOnly onClick={()=>borrarProducto(item.PRODUCTO)}><img src={borrar} alt="borrar"/></Button></TableCell>
+                                                                <TableCell>
+                                                                    <Button 
+                                                                        variant='flat' 
+                                                                        color='danger' 
+                                                                        isIconOnly 
+                                                                        onClick={()=>borrarProducto(item.PRODUCTO)}
+                                                                        >
+                                                                            <img src={borrar} alt="borrar"/>
+                                                                    </Button>
+                                                                </TableCell>
                                                         </TableRow>
                                                     ))
                                                 }
